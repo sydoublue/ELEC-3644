@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ember — ELEC3644 Project Proposal</title>
+<style>
+  @page { size: A4; margin: 12mm 13mm 12mm 13mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: 10.4pt;
+    line-height: 1.32;
+    color: #1c1917;
+  }
+  h1, h2, h3, h4 { font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #1c1917; }
+  h1 { font-size: 22pt; line-height: 1.05; margin: 0 0 4px; letter-spacing: -0.02em; }
+  h2 { font-size: 12.5pt; margin: 11px 0 4px; padding-top: 2px; border-top: 1.5px solid #1c1917; break-after: avoid; page-break-after: avoid; }
+  h3 { font-size: 11pt; margin: 8px 0 2px; break-after: avoid; page-break-after: avoid; }
+  p { margin: 0 0 6px; }
+  ul, ol { margin: 2px 0 6px; padding-left: 1.15em; }
+  li { margin: 0 0 2px; }
+  strong { font-weight: 650; }
+  a { color: inherit; text-decoration: none; }
+  .kicker {
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9.5pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a3412;
+    margin: 0 0 8px;
+  }
+  .subtitle { font-size: 12pt; margin: 0 0 10px; }
+  .meta { font-size: 10.5pt; margin: 0 0 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 9.6pt; }
+  th, td { border: 1px solid #44403c; padding: 3px 5px; vertical-align: top; text-align: left; }
+  th { font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; background: #f5f5f4; font-weight: 600; }
+  .note { font-size: 9pt; color: #44403c; margin: 2px 0 0; }
+  .cover { page-break-after: always; }
+  .back { page-break-before: always; }
+  .fig { margin: 6px 0 8px; break-inside: avoid; page-break-inside: avoid; }
+  .keep { break-inside: avoid; page-break-inside: avoid; }
+  .cap { font-size: 9pt; margin: 3px 0 0; }
+  .cap strong { font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  code, .fields { font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 8.6pt; }
+  .fields { background: #fafaf9; border: 1px solid #d6d3d1; padding: 4px 6px; margin: 2px 0 6px; line-height: 1.35; }
+  .phones { display: flex; gap: 6px; align-items: stretch; }
+  .phone {
+    flex: 1;
+    border: 1.5px solid #1c1917;
+    border-radius: 10px;
+    padding: 5px 5px 6px;
+    background: #fff;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 7.4pt;
+    line-height: 1.25;
+    min-height: 148px;
+  }
+  .phone .bar { height: 3px; width: 28px; background: #1c1917; border-radius: 2px; margin: 0 auto 4px; }
+  .phone b { display: block; font-size: 8pt; margin-bottom: 2px; }
+  .phone .sub { color: #57534e; margin-bottom: 3px; }
+  .btn {
+    display: block; text-align: center; border: 1px solid #9a3412; color: #9a3412;
+    border-radius: 4px; padding: 2px 0; margin-top: 4px; font-weight: 600;
+  }
+  .btn.fill { background: #9a3412; color: white; }
+  .dots { letter-spacing: 1px; }
+  .rowline { border-top: 1px solid #e7e5e4; padding-top: 2px; margin-top: 2px; }
+  .flow { display: flex; flex-wrap: wrap; gap: 4px 0; align-items: center; font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 8pt; }
+  .box { border: 1.5px solid #1c1917; border-radius: 4px; padding: 3px 5px; background: #fff; }
+  .box em { font-style: normal; color: #9a3412; font-weight: 600; }
+  .arrow { padding: 0 3px; color: #9a3412; font-weight: 700; }
+  .store { border-style: dashed; background: #fff7ed; }
+  .ephem { border-style: dotted; color: #44403c; }
+  .logcard { display: flex; gap: 8px; }
+  .logcard .phone { min-height: 0; max-width: 240px; }
+  h2.sec { break-after: avoid; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <p class="kicker">ELEC3644 Advanced Mobile Apps Development</p>
+  <h1>Ember</h1>
+  <p class="subtitle">Project proposal — situational short workouts, and one log for activity inside and outside the app</p>
+  <p class="meta"><strong>Group:</strong> ________ &nbsp;&nbsp; <strong>Date:</strong> 1 November 2026</p>
+  <table>
+    <thead>
+      <tr><th style="width:28%">Member (name)</th><th>Responsibility</th><th style="width:18%">Contribution</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>&nbsp;</td><td>Daily Pick flow, this proposal, and the demo video</td><td>34%</td></tr>
+      <tr><td>&nbsp;</td><td>Workout generator and in-session player</td><td>33%</td></tr>
+      <tr><td>&nbsp;</td><td>Activity log, on-device storage, and integration</td><td>33%</td></tr>
+      <tr><td colspan="2"><strong>Total</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table>
+  <p>Ember builds a short bodyweight workout from how the user feels today and how many minutes are free, then keeps that session and outside activities, such as a game of basketball, in one on-device log. The body of this proposal specifies the iPhone Daily Pick path and that log. The prototype demonstrates that path only.</p>
+  <p class="note">Write each member’s name in the blank cell before submission. The percentages are a working split across the three roles. Change them if the group agrees a different split; they must still sum to 100%. The same table is repeated after the references. Sections 1–5 and Figures 1–3 are the proposal body. This cover, the references, and the contribution table sit outside that page count.</p>
+</section>
+
+<main>
+  <h2>1. Overview of the design</h2>
+  <p>Ember is for the gap between a full workout and doing nothing. Three situations set the design. After work there is a short gap and no time to reach a gym. After an assignment is submitted, the only space is a dorm room. In a hotel there is floor space and no equipment. The session has to be short, and it has to start before that window closes.</p>
+  <p>The problem is to begin quickly, to let the user say how hard today should feel and how many minutes exist, and to keep two kinds of activity in one place: the session just done in the app, and something done outside it, such as a basketball game. The next short session should be able to use that self-reported state.</p>
+  <p>Our survey of Fitbod, Freeletics, and Seven, and the logging apps named there, found these pieces in different products.</p>
+  <ul>
+    <li><strong>Short classes (Seven).</strong> Seven starts a bodyweight circuit immediately, in the high-intensity circuit form described by Klika and Jordan (2013), but the basic session is about seven minutes. Feeling, a chosen duration, and a sore area do not build the session, and the hearts-and-streak 7 Month Challenge sits beside the training rather than changing it (Seven, n.d.-a, n.d.-b).</li>
+    <li><strong>Recovery and adaptation (Fitbod, and Freeletics for feedback).</strong> Fitbod builds strength work from a goal, equipment, and a per-muscle recovery percentage taken from the log (Fitbod, n.d.-a). A few minutes on a hotel floor sits outside that model, and outside activity counts only when another service imports it. Freeletics does adapt later sessions from post-workout feedback, including perceived effort (Freeletics, 2023a, 2023b; Borg, 1982), but the Coach issues a multi-day journey, so a sudden ten-minute window means editing a session already planned, and the questions afterwards are longer than a few taps.</li>
+    <li><strong>Logs alone.</strong> Strong and Hevy, as the survey grouped them, record a workout the user has already planned. They do not assemble one from the minutes and the state on hand.</li>
+  </ul>
+  <p><strong>Ember</strong> is a lightweight iPhone assistant that builds a short workout from the time and the self-reported state the user has right now, and writes in-app sessions and outside activities into the same log.</p>
+  <p>Design goals:</p>
+  <ul>
+    <li>Reach a running timer within 30–60 seconds of opening the app.</li>
+    <li>Set difficulty in one step: five answers to “How are you feeling today?”</li>
+    <li>Set duration on a slider.</li>
+    <li>Leave a short reaction after the session, and let it bias the next setup.</li>
+    <li>Keep one chronological log.</li>
+  </ul>
+  <p>Out of scope: subscription coaching, and any step that lets a language model choose exercises (selection stays a testable rule engine); medical assessment, diagnosis, or injury advice; a social feed, friend challenges, or live classes. Apple Watch and HealthKit can be added later to read or record activity. This prototype does not use them, and the main path needs no account.</p>
+  <p>The build is an iPhone app. What we will demonstrate is Daily Pick — Home, setup, plan, the active session, and feedback — plus the log and adding an outside activity. Charts, sync, and accounts are described only so their place is clear. They are not in the prototype.</p>
+
+  <h2>2. Main functionalities</h2>
+  <p>For each function: what the user does, what the system does, and why it is there.</p>
+
+  <h3>2.1 Quick setup</h3>
+  <p>The user taps Start and answers two things. “How are you feeling today?” has five levels: Very low, Low, Okay, Good, Great. A slider sets 5–30 minutes, default 10. Place and discomfort areas sit under More and can be skipped.</p>
+  <p>The system writes a <code>SetupInput</code>. On a later visit it prefills difficulty and duration from the last confirmed values, then applies the bias in §2.4. It does not ask for a goal, a programme, or an account.</p>
+  <p>Seven shows that a session people actually start has almost no setup. Fitbod and Freeletics ask for equipment, a plan, or a journey first. Two controls carry “I have this many minutes and I feel like this.” More is there so a hotel room or a sore knee can change the plan without spending the free minute on configuration.</p>
+  <div class="fields">SetupInput: difficulty 1–5 (the labels above; this sets today’s difficulty, it is not a clinical score); durationMinutes 5–30; place optional ∈ {dorm, home, hotel, outdoors}; discomfortAreas optional ⊆ {shoulders, lowerBack, knees, wrists}.</div>
+
+  <h3>2.2 Generate the short workout</h3>
+  <p>The user confirms and reads a preview before the timer starts. <code>WorkoutGenerator</code> maps that <code>SetupInput</code> to a <code>WorkoutPlan</code>. The prototype is a rule engine over a small bodyweight library. The rules can be refined later; the fields are the contract.</p>
+  <ul>
+    <li>Duration sets how many bouts appear. Each bout is work plus rest, and the sum stays close to <code>durationMinutes</code>.</li>
+    <li><code>difficulty</code> picks the variant and the work/rest pair. Lower levels use simpler variants and longer rest; higher levels do the reverse.</li>
+    <li><code>discomfortAreas</code> remove exercises that load that region, and the slot is filled from another pattern. Knees remove squats, lunges, and jumps.</li>
+    <li>Place <code>dorm</code> or <code>hotel</code> also removes jumps. <code>home</code> and <code>outdoors</code> may keep them. Every plan in this project is bodyweight only.</li>
+  </ul>
+  <p>Patterns are push, squat, hinge, core, and mobility, so a removed pattern is replaced by another pattern. That keeps a 15-minute session with sore legs an upper-body session, rather than a random remainder.</p>
+  <div class="fields">WorkoutPlan: planId; createdAt; setup (the SetupInput); items[] of {exerciseId, name, pattern, workSec, restSec, cue}; totalSec; reason (one sentence from the same rules, e.g. “No squats or jumps: knees were marked and the place is a hotel.”). The sentence explains the filter. It is not health advice.</div>
+  <p>Fitbod’s useful split is between which exercises appear and how hard they are prescribed (Fitbod, n.d.-a). Ember uses that split on a short session. Asking for discomfort up front follows Freeletics’ point that the user knows something the log does not (Freeletics, 2023b).</p>
+
+  <h3>2.3 Session</h3>
+  <p>The user starts the plan, follows one exercise at a time, and can skip. <code>SessionPlayer</code> shows the name, a one-line cue, a work countdown, a rest countdown, and the next name. Skip marks the item skipped and advances. Replace, if we build it, swaps in another exercise of the same pattern that still passes the place and discomfort filters. The demo path uses Skip, and Replace is omitted from the video if it is not finished.</p>
+  <div class="fields">Session: sessionId; planId; startedAt; endedAt; status ∈ {completed, stopped}; items[] of {exerciseId, result ∈ {completed, skipped}, elapsedSec}.</div>
+  <p>A move that does not fit the room should not end a session this short. Skip is the smallest form of the mid-plan change that Fitbod and Freeletics already offer.</p>
+
+  <h3>2.4 Quick feedback</h3>
+  <p>The user marks the session too easy, about right, or too hard, optionally taps areas that feel uncomfortable, and taps Done. <code>FeedbackWriter</code> stores that record. Next time, “too hard” lowers the prefilled difficulty by one step, “too easy” raises it by one, and a tapped area is pre-checked under More. The prototype stores the feedback and applies this bias. It does not compute a per-muscle recovery percentage, and it does not read the taps as a medical judgment.</p>
+  <div class="fields">Feedback: sessionId; perceived ∈ {tooEasy, aboutRight, tooHard}; areas (optional, same vocabulary as discomfortAreas); createdAt.</div>
+  <p>Freeletics is why the screen exists, and why it is only two actions (Freeletics, 2023a, 2023b). Three labels are a coarse perceived-effort rating (Borg, 1982). Guidance for healthy adults also spaces hard work on the same muscle group (Garber et al., 2011). Ember does not estimate that interval. It only carries the user’s own taps into the next setup.</p>
+
+  <h3>2.5 One activity log</h3>
+  <p>The user opens Log and sees in-app sessions and outside activities in time order. Add activity takes a title, minutes, and a kind — the demo case is basketball, 40 minutes. Ending a session appends an in-app row; the form appends an outside row. Charts over this list are planned and are not in the prototype. Outside rows are kept so a later generator can read them. This prototype displays them and does not yet change exercise choice from them.</p>
+  <div class="fields">Activity: activityId; occurredAt; origin ∈ {inApp, external}; title; durationMin; kind; sessionId (set only when origin is inApp).</div>
+  <p>Seven records its own circuits. Fitbod can fold imported training into recovery. A logging app records what the user already planned. Ember’s list is where the circuit the app just built and the game the user played are the same kind of entry.</p>
+
+  <h3>2.6 On-device data</h3>
+  <p>The user does not create an account. Preferences, plans, sessions, feedback, and activities stay on the phone. The prototype is a SwiftUI app and does not call a coaching service. An on-device store is enough; sync can wait. That matches leaving subscription coaching out of this project. Our survey also found that generating and logging a workout on the phone, without a live connection, is already realistic in Fitbod (Group survey, 2026).</p>
+  <p><strong>Kept on device:</strong> last difficulty, last duration, each Activity, Session, and Feedback. <strong>On screen only:</strong> the slider before confirm, the running countdown, and an unsent feedback form.</p>
+
+  <h2>3. Major views and components</h2>
+  <table>
+    <thead><tr><th>View</th><th>Role</th><th>Main elements</th></tr></thead>
+    <tbody>
+      <tr><td>Home</td><td>Today’s entry, plus a one-line status from the latest feedback</td><td>Start, link to Log</td></tr>
+      <tr><td>Setup</td><td>Two required controls; constraints behind More</td><td>Feeling (5), duration slider, More</td></tr>
+      <tr><td>Plan</td><td>Preview before the timer</td><td>Exercise list, reason, Start workout</td></tr>
+      <tr><td>Active</td><td>One exercise at a time</td><td>Name, cue, timer, next, Skip</td></tr>
+      <tr><td>Feedback</td><td>A few taps after the session</td><td>Effort (3), optional areas, Done</td></tr>
+      <tr><td>Log</td><td>In-app and outside rows together</td><td>List, Add activity</td></tr>
+      <tr><td>Settings</td><td>Housekeeping only</td><td>Reset on-device data. Watch and HealthKit shown as not connected</td></tr>
+    </tbody>
+  </table>
+  <p>Home’s status is a line such as “Last time: too hard · knees.” A flame or streak is not part of this prototype.</p>
+  <p>Components, in path order: <strong>SessionSetup</strong> writes a SetupInput; <strong>WorkoutGenerator</strong> writes a WorkoutPlan; <strong>SessionPlayer</strong> writes a Session; <strong>FeedbackWriter</strong> writes a Feedback and the next-open bias; <strong>ActivityLog</strong> appends and lists Activity rows, including the row written when a session ends.</p>
+
+  <div class="fig">
+    <div class="phones">
+      <div class="phone"><div class="bar"></div><b>Home</b><div class="sub">Daily Pick</div>Last time: too hard · knees<div class="btn fill">Start</div><div class="rowline">Log</div></div>
+      <div class="phone"><div class="bar"></div><b>Setup</b><div class="sub">How are you feeling?</div><span class="dots">○ ○ ● ○ ○</span><div>Okay</div><div class="rowline">Duration &nbsp; 12 min</div><div>━━━━●━━━</div><div class="rowline">More ▸ place, areas</div><div class="btn">See workout</div></div>
+      <div class="phone"><div class="bar"></div><b>Plan</b><div class="sub">12 min · Okay · hotel</div>1. Wall push-up 40s<div>2. Glute bridge 40s</div><div>3. Dead bug 40s</div><div class="rowline">No squats or jumps</div><div class="btn fill">Start workout</div></div>
+      <div class="phone"><div class="bar"></div><b>Active</b><div class="sub">Wall push-up</div><div style="font-size:14pt;font-weight:700;letter-spacing:-0.03em">0:28</div><div>Next: Glute bridge</div><div class="btn">Skip</div></div>
+      <div class="phone"><div class="bar"></div><b>Feedback</b><div class="sub">How was that?</div>Too easy<div>About right</div><div><strong>Too hard</strong></div><div class="rowline">Areas: Knees</div><div class="btn fill">Done</div></div>
+    </div>
+    <p class="cap"><strong>Figure 1.</strong> Daily Pick, the path the prototype demonstrates: Home → Setup → Plan → Active → Feedback. More (place and discomfort) is on Setup and is optional.</p>
+  </div>
+
+  <div class="fig">
+    <div class="logcard">
+      <div class="phone" style="flex:none; width:46%"><div class="bar"></div><b>Log</b>
+        <div class="rowline"><strong>Daily Pick · 12 min</strong><br>In app · hotel · too hard</div>
+        <div class="rowline"><strong>Basketball · 40 min</strong><br>Outside · added by hand</div>
+        <div class="btn">Add activity</div>
+      </div>
+      <div style="flex:1; font-size:10pt; padding-top:4px">
+        <p style="margin:0">The two rows are the same record type. The first is written when the session in Figure 1 ends. The second is an outside activity the user types in. Order is by time. No chart is drawn here; analysis of the list is planned only.</p>
+      </div>
+    </div>
+    <p class="cap"><strong>Figure 2.</strong> One in-app session and one outside activity in the same log.</p>
+  </div>
+
+  <div class="keep">
+  <h2>4. Data flow</h2>
+  <div class="fig">
+    <div class="flow">
+      <div class="box ephem">Setup screen<br><em>ephemeral</em></div>
+      <div class="arrow">→</div>
+      <div class="box">SetupInput<br>difficulty, duration,<br>place?, areas?</div>
+      <div class="arrow">→</div>
+      <div class="box">WorkoutGenerator<br><em>rules</em></div>
+      <div class="arrow">→</div>
+      <div class="box">WorkoutPlan<br>items, totalSec, reason</div>
+      <div class="arrow">→</div>
+      <div class="box">SessionPlayer</div>
+      <div class="arrow">→</div>
+      <div class="box">Session<br>completed / skipped</div>
+    </div>
+    <div class="flow" style="margin-top:6px">
+      <div class="box">Session</div>
+      <div class="arrow">→</div>
+      <div class="box">FeedbackWriter</div>
+      <div class="arrow">→</div>
+      <div class="box">Feedback<br>perceived, areas?</div>
+      <div class="arrow">→</div>
+      <div class="box store">On-device store<br>preferences, plans,<br>sessions, feedback,<br>activities</div>
+      <div class="arrow">→</div>
+      <div class="box">Home status,<br>next Setup defaults,<br>Log list</div>
+    </div>
+    <div class="flow" style="margin-top:6px">
+      <div class="box">Add activity<br>title, minutes, kind</div>
+      <div class="arrow">→</div>
+      <div class="box">Activity<br>origin = external</div>
+      <div class="arrow">→</div>
+      <div class="box store">same Activity log</div>
+      <div class="arrow">→</div>
+      <div class="box ephem">shown in Log now;<br>generator input later</div>
+    </div>
+    <p class="cap"><strong>Figure 3.</strong> Records along Daily Pick, and an outside activity joining the same log. Dashed boxes are stored on the phone. Dotted boxes are on-screen only, or reserved for a later version.</p>
+  </div>
+  </div>
+  <p>Reading the arrows: a confirmed setup becomes a <code>SetupInput</code> and enters <code>WorkoutGenerator</code>, which returns a <code>WorkoutPlan</code>. <code>SessionPlayer</code> runs that plan into a <code>Session</code>. <code>FeedbackWriter</code> turns the finished session plus the taps into a <code>Feedback</code>. The session is also written as an <code>Activity</code> with <code>origin = inApp</code>. An outside activity is an <code>Activity</code> with <code>origin = external</code> in that same log. Home, the next setup, and Log read the store. The next <code>SetupInput</code> is prefilled from the last difficulty and duration, shifted by the latest feedback. External rows are stored for a future generator. They are not an input to <code>WorkoutGenerator</code> in this prototype.</p>
+  <p><strong>On-screen only:</strong> the feeling and the slider before confirm, the countdown, the current item, an unsent feedback form. <strong>On device:</strong> preferences, <code>WorkoutPlan</code>, <code>Session</code>, <code>Feedback</code>, and <code>Activity</code>. Removing the app removes them. There is no account copy.</p>
+  <p>For the prototype, generation is either the rules in §2.2 or a few prepared plans selected by duration band, difficulty, place, and discomfort. Both honour the same input and output fields. The video can use either. A fatigue score per region, decaying over days, is a possible later reading of <code>Feedback</code>. Daily Pick does not need it.</p>
+
+  <h2>5. Prototype and video</h2>
+  <p>The video is about three minutes. The story is a hotel room, knees marked uncomfortable, then a basketball game added to the log.</p>
+  <ol>
+    <li>Open Ember. Home shows Daily Pick, the status line, and Start. (0:00–0:20)</li>
+    <li>Set feeling and duration. Open More: place Hotel, area Knees. (0:20–0:50)</li>
+    <li>The plan lists bodyweight moves with no squats and no jumps, plus the one-line reason. Start workout. (0:50–1:10)</li>
+    <li>Let one countdown finish. Skip the next move. End the session so feedback is reached inside the video. (1:10–2:10)</li>
+    <li>Tap Too hard and Knees. Done. (2:10–2:30)</li>
+    <li>Open Log. The session is there. Add activity: Basketball, 40 minutes. Both rows are on screen. (2:30–3:00)</li>
+  </ol>
+  <p><strong>Built and working on this path:</strong> the screens in Figure 1 and the log, the two setup controls, More, a plan from the rules or from the prepared plans, a real countdown, Skip, feedback saved on the phone, the log list, and Add activity.</p>
+  <p><strong>Placeholder, or left out of the build:</strong> exercise video and spoken coaching (a name and a text cue only); Replace, if it is not finished; charts; accounts; sync; HealthKit; Apple Watch; notifications; using an outside activity to change the next plan; a recovery percentage per muscle.</p>
+</main>
+
+<section class="back">
+  <h2>References</h2>
+  <p>Competitor behaviour is taken from our course survey and from the sources that survey used. App Store titles were checked on 1 November 2026. Papers and help pages below are the ones this proposal actually relies on. Sources in the survey bibliography that this text does not use — including Hamari et al. (2014) on gamification, Schoenfeld (2010), Ryan and Deci (2000), and Apple’s Foundation Models documentation — are omitted here so the list matches the claims.</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Borg, G. A. V. (1982). Psychophysical bases of perceived exertion. <em>Medicine &amp; Science in Sports &amp; Exercise, 14</em>(5), 377–381. https://doi.org/10.1249/00005768-198205000-00012</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Fitbod. (n.d.-a). <em>How Fitbod creates your workout</em>. Fitbod Help Center. https://help.fitbod.me/hc/en-us/articles/360004429814-How-Fitbod-Creates-Your-Workout</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Fitbod. (n.d.-b). <em>Fitbod: Gym &amp; fitness planner</em> [Mobile application]. App Store. https://apps.apple.com/us/app/fitbod-gym-fitness-planner/id1041517543 (The survey listed this listing as “Fitbod: Gym &amp; home workouts.” The App Store id, 1041517543, is unchanged; the title has been updated.)</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Freeletics. (n.d.). <em>Freeletics: Workouts &amp; fitness</em> [Mobile application]. App Store. https://apps.apple.com/us/app/freeletics-workouts-fitness/id654810212</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Freeletics. (2023a, October 9). <em>AI and algorithms: How the Freeletics Coach works</em>. https://www.freeletics.com/en/blog/posts/ai-and-your-coach/</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Freeletics. (2023b, September 19). <em>What your Coach needs to know</em>. https://www.freeletics.com/en/blog/posts/coach-feedback/</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Garber, C. E., Blissmer, B., Deschenes, M. R., Franklin, B. A., Lamonte, M. J., Lee, I.-M., Nieman, D. C., &amp; Swain, D. P. (2011). Quantity and quality of exercise for developing and maintaining cardiorespiratory, musculoskeletal, and neuromotor fitness in apparently healthy adults: Guidance for prescribing exercise. <em>Medicine &amp; Science in Sports &amp; Exercise, 43</em>(7), 1334–1359. https://doi.org/10.1249/MSS.0b013e318213fefb</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Group survey. (2026, October 5). <em>A survey of contemporary adaptive workout apps: Fitbod, Freeletics and Seven</em>. ELEC3644 course submission.</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Klika, B., &amp; Jordan, C. (2013). High-intensity circuit training using body weight: Maximum results with minimal investment. <em>ACSM’s Health &amp; Fitness Journal, 17</em>(3), 8–13. https://doi.org/10.1249/FIT.0b013e31828cb1e8</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Seven. (n.d.-a). <em>Seven: 7 minute workout</em> [Mobile application]. App Store. https://apps.apple.com/us/app/seven-7-minute-workout/id650276551</p>
+  <p style="padding-left:1.2em; text-indent:-1.2em">Seven. (n.d.-b). <em>What is the 7 Month Challenge?</em> https://seven.app/articles/explore-seven/what-is-the-7-month-challenge</p>
+
+  <h2>Contribution table</h2>
+  <table>
+    <thead>
+      <tr><th style="width:28%">Member (name)</th><th>Responsibility</th><th style="width:18%">Contribution</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>&nbsp;</td><td>Daily Pick flow, this proposal, and the demo video</td><td>34%</td></tr>
+      <tr><td>&nbsp;</td><td>Workout generator and in-session player</td><td>33%</td></tr>
+      <tr><td>&nbsp;</td><td>Activity log, on-device storage, and integration</td><td>33%</td></tr>
+      <tr><td colspan="2"><strong>Total</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="note">Enter each member’s name before submission. Adjust the percentages if the group agrees a different split; they must sum to 100%.</p>
+</section>
+
+</body>
+</html>
